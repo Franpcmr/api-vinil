@@ -30,7 +30,8 @@
     "node-cache": "^5.1.2",
     "node-fetch": "^2.7.0",
     "node-wav": "^0.0.2",
-    "puppeteer": "^21.11.0"
+    "puppeteer": "^21.11.0",
+    "puppeteer-core": "^24.4.0"
   },
   "devDependencies": {
     "nodemon": "^3.0.3"

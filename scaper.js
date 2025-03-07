@@ -145,11 +145,10 @@ async function searchWithBase64Image(base64Image, useCache = false) {
 
   // Inicia Puppeteer con opciones mejoradas
   const browser = await puppeteer.launch({ 
-    headless: true,
+    headless: 'new', // Usa el nuevo modo headless explícitamente
     args: [
       '--no-sandbox',
       '--disable-setuid-sandbox',
-      '--window-size=1280,720',
       '--disable-dev-shm-usage',
       '--disable-gpu',
       '--disable-web-security',
@@ -580,4 +579,5 @@ app.post('/close-browser', async (req, res) => {
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
+  console.log(`Servidor escuchando en el puerto ${PORT}`);
 });
