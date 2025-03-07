@@ -17,14 +17,16 @@ Este proyecto utiliza la API de Discogs para obtener información sobre vinilos 
 
 ## Requisitos
 
-- Node.js (v12 o superior)
+- Node.js (v16 o superior)
 - NPM
+- Chrome (instalado automáticamente como dependencia)
 
 ## Dependencias
 
 - axios: Para realizar peticiones HTTP y descargar imágenes
 - fs-extra: Para manejar archivos
 - dotenv: Para gestionar variables de entorno (opcional)
+- puppeteer: Para automatizar la navegación y búsqueda de imágenes
 
 ## Instalación
 
@@ -34,6 +36,18 @@ Este proyecto utiliza la API de Discogs para obtener información sobre vinilos 
 ```bash
 npm install
 ```
+
+Este comando automáticamente instalará Chrome como parte del proceso de instalación de Puppeteer.
+
+## Verificación de Chrome
+
+Si experimentas problemas con Chrome, puedes ejecutar el script de verificación:
+
+```bash
+npm run setup
+```
+
+Este script comprobará si Chrome está correctamente instalado y configurado.
 
 ## Configuración
 

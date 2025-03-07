@@ -11,7 +11,9 @@
     "service:restart": "node service.js restart",
     "service:status": "node service.js status",
     "logs": "tail -f logs/api-vinilos-camara.out.log",
-    "logs:error": "tail -f logs/api-vinilos-camara.err.log"
+    "logs:error": "tail -f logs/api-vinilos-camara.err.log",
+    "postinstall": "npx puppeteer browsers install chrome",
+    "setup": "node setup-chromium.js"
   },
   "keywords": [],
   "author": "",
@@ -30,10 +32,12 @@
     "node-cache": "^5.1.2",
     "node-fetch": "^2.7.0",
     "node-wav": "^0.0.2",
-    "puppeteer": "^21.11.0",
-    "puppeteer-core": "^24.4.0"
+    "puppeteer": "^21.11.0"
   },
   "devDependencies": {
     "nodemon": "^3.0.3"
+  },
+  "engines": {
+    "node": ">=16.0.0"
   }
 }

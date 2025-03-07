@@ -8,6 +8,11 @@ const app = express();
 app.use(express.json({limit: '50mb'}));
 app.use(cors());
 
+// Endpoint de health check para monitoreo
+app.get('/health', (req, res) => {
+  res.status(200).send({ status: 'OK', timestamp: new Date().toISOString() });
+});
+
 // Inicializar caché con TTL de 1 hora
 const cache = new NodeCache({ stdTTL: 3600 });
 
@@ -159,6 +164,7 @@ async function searchWithBase64Image(base64Image, useCache = false) {
       '--disable-extensions',
       '--ignore-certificate-errors'
     ],
+    executablePath: process.env.PUPPETEER_EXECUTABLE_PATH || puppeteer.executablePath(),
     defaultViewport: {
       width: 1280,
       height: 720

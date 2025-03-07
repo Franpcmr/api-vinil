@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: api-vinilos-camara
+    env: docker
+    buildCommand: npm install && npx puppeteer browsers install chrome
+    startCommand: npm start
+    healthCheckPath: /health
+    envVars:
+      - key: PUPPETEER_CACHE_DIR
+        value: /opt/render/.cache/puppeteer
+      - key: NODE_ENV
+        value: production 
